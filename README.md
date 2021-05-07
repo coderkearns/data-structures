@@ -83,4 +83,45 @@ console.log(linkedList.toString())
 ```
 
 ## BinaryTree
-A binary search tree, which uses both [Queue](#queue) and [Stack](#stack) 
+A binary search tree, which uses both [Queue](#queue) and [Stack](#stack). It always follows this pattern: *left < parent < right*. Code at [binary-tree.js](https://github.com/coderkearns/data-structures/blob/master/binary-tree.js)
+```javascript
+let binaryTree = new BinaryTree()
+binaryTree.add(5)
+binaryTree.add(4)
+binaryTree.add(6)
+binaryTree.add(2)
+binaryTree.add(1)
+binaryTree.add(7)
+binaryTree.add(8)
+
+/*
+      5
+     / \
+    4   6
+   /     \
+  2       7
+ /         \
+1           8
+*/
+
+binaryTree.toObject() === {
+  root: {
+    value: 5,
+    left: {
+      value: 4,
+      left: {
+        value: 2,
+        left: { value: 1 }
+      }
+    },
+    right: {
+      value: 6,
+      right: {
+        value: 7,
+        right: { value: 8 }
+      }
+    }
+  }
+}
+
+```

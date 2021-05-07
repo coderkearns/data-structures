@@ -82,7 +82,7 @@ class BinaryTree {
   //     left < parent < right.
   //  4. Make sure to change the root if it was removed.
   remove(value) {
-    const nodeToRemove = this.find(value)
+    const nodeToRemove = this.findNodeAndParent(value).found
     if (!nodeToRemove) return false
 
     // Combine left and right children into one subtree without nodeToRemove
@@ -197,6 +197,11 @@ class BinaryTree {
   toString(indent = null) {
     if (!this.root) return JSON.stringify({ root: null }, null, indent)
     return JSON.stringify({ root: this.root.toString(indent, false)}, null, indent)
+  }
+
+  // Convert the tree into an object for simplicity in viewing.
+  toObject() {
+    return JSON.parse(this.toString())
   }
 }
 
