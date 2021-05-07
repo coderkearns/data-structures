@@ -3,6 +3,7 @@ class Stack {
     this.list = []
   }
 
+  // Returns the number of items in the queue
   get length() {
     return this.list.length
   }
