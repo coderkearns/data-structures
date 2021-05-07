@@ -14,8 +14,8 @@ class ListNode {
 }
 
 class LinkedList {
-  constructor(head = null) {
-    this.head = head
+  constructor() {
+    this.head = null
   }
 
   // Check if the linked list is empty
@@ -168,7 +168,7 @@ class LinkedList {
 
   // Return a string representation of the linked list
   toString() {
-    if (!this.head) return "[null]"
+    if (!this.head) return "null"
     return this.head.toString()
   }
 }

@@ -11,6 +11,7 @@ queue.add("a")
 queue.add("b")
 queue.add("c")
 
+queue.peek() // "a"
 queue.length // 3
 queue.isEmpty() // false
 
@@ -37,6 +38,7 @@ stack.add("a")
 stack.add("b")
 stack.add("c")
 
+stack.peek() // "c"
 stack.length // 3
 stack.isEmpty() // false
 
@@ -57,8 +59,28 @@ for (let item in queue) {
 A linked list, where each item is a *node* which contains data and a link to the next item. As always, more details in the code: [linked-list.js](https://github.com/coderkearns/data-structures/blob/master/linked-list.js).
 
 ```javascript
-let linkedList = new LinkedList("a")
-linkedList.insertAtBeginning("b")
-linkedList.insertAtEnd("c")
-linkedList.insertAll(["d", "e"]) {some: ["other", "data"]}
+let linkedList = new LinkedList()
+linkedList.insertAtBeginning("a")
+linkedList.insertAtEnd("b")
+linkedList.insertAll(["c", "d", 1, 2])
+linkedList.insertAt(3, {some: ["other", "data"]})
+
+console.log(linkedList.toString())
+// ["a"] -> ["b"] -> ["c"] -> [{"some":["other","data"]}] -> ["d"] -> [1] -> [2] -> null
+
+linkedList.deleteHead()
+linkedList.deleteTail()
+linkedList.deleteAt(2)
+
+console.log(linkedList.toString())
+// ["b"] -> ["c"] -> ["d"] -> [1] -> null
+
+linkedList.get(1) // "c"
+linkedList.clear()
+
+console.log(linkedList.toString())
+// null
 ```
+
+## BinaryTree
+A binary search tree, which uses both [Queue](#queue) and [Stack](#stack) 
