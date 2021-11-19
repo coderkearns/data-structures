@@ -6,8 +6,10 @@ class GraphNode {
 }
 
 class Graph {
+    static Node = GraphNode
+
     constructor() {
-        this.nodes = []
+        this.nodes = {}
         this.map = {}
         this.index = 0
     }
@@ -34,14 +36,17 @@ class Graph {
     }
 
     // Create an adjacency object
-    toObject() {
-        let adj = {}
+    // { [key]: [node, [edges]] }
+    adjacencyMap() {
+        let adjacency = {}
         for (let node of this.nodes) {
-            adj[node.key] = this.map[node.key]
+            adjacency[node.key] = [node, this.map[node.key]]
         }
-        return adj
+        return adjacency
     }
 }
+
+module.exports = Graph
 
 /*
 
