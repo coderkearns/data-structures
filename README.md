@@ -2,6 +2,12 @@
 
 A collection of some data structures, written in javascript, mostly for education purposes.
 
+### Data Structures:
+  - [Queue](#queue)
+  - [Stack](#stack)
+  - [LinkedList](#linkedlist)
+  - [BinaryTree](#binarytree)
+
 ## Queue
 A simple queue, first-in-first-out. More explanations in comments. See [queue.js](https://github.com/coderkearns/data-structures/blob/master/queue.js) for more.
 
